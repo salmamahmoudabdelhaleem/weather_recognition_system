@@ -1,0 +1,6 @@
+*.keras
+*.h5
+*.npy
+*.pyc
+.ipynb_checkpoints/
+weather image recognition/
