@@ -21,18 +21,16 @@ Used findings to inform preprocessing and augmentation strategy
 
 # ⚙️ Preprocessing & Augmentation
 
-Step               || Details
-
-Resize             || All images resized to 300×300 
-Normalization      || EfficientNetB0.preprocess_input (expects 0–255, handles normalization internally)
-Rotation           || ±10°
-Zoom               || 20%
-Width/Height Shift || 10%
-Shear              || 10%
-Horizontal Flip    || ✅ Yes (no vertical flip — rain/snow falls downward)
-BrightnessRange    || [0.8, 1.2] 
-Validation Split   || 20% (clean generator — no augmentation)
-Class Weights      || Computed via sklearn.utils.class_weight.compute_class_weight to handle imbalance
+Resize   All images resized to 300×300  || 
+Normalization    EfficientNetB0.preprocess_input (expects 0–255, handles normalization internally) || 
+Rotation        ±10°  || 
+Zoom            20%  || 
+Width/Height Shift   10%  || 
+Shear              10%  || 
+Horizontal Flip    ✅ Yes (no vertical flip — rain/snow falls downward)  || 
+BrightnessRange    [0.8, 1.2]  ||  
+Validation Split   20% (clean generator — no augmentation)  ||  
+Class Weights       Computed via sklearn.utils.class_weight.compute_class_weight to handle imbalance  || 
 
 
 # 🧠 Model Architecture
@@ -68,12 +66,10 @@ On subsequent runs, model is loaded from disk — no retraining needed
 
 # 📊 Results
 
-Metric                  Value
-
-Validation Accuracy  |  +90%
-Number of Classes    |   11
-Training Images      |  5,493
-Validation Images    |  1,369
+Validation Accuracy    +90%  ||  
+Number of Classes      11    || 
+Training Images       5,493   || 
+Validation Images     1,369   || 
 
 # 🌐 Web Application
 Built with Flask — a clean, dark-mode interface where users can:
@@ -101,7 +97,7 @@ Weather-Recognition-System/
 Note: The trained model file (weather_best.keras) is not included due to size. Train the model using the notebook and it will be saved automatically.
 
 
-🛠️ Tech Stack
+# 🛠️ Tech Stack
 
 Category         ||   Tools
 ------------------------------------------------------------
