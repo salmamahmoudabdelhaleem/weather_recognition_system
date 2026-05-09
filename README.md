@@ -7,15 +7,20 @@ This project builds an end-to-end intelligent system for weather image recogniti
 # 📂 Dataset
 
 Source: Weather Image Recognition — Kaggle
+
 Total Images: 6,862
-Classes (11): Dew Fog/Smog Frost Glaze Hail Lightning Rain Rainbow Rime Sandstorm Snow
+
+Classes (11): (Dew | (Fog / Smog) | Frost | Glaze | Hail | Lightning | Rain | Rainbow | Rime | Sandstorm | Snow)
+
 Image sizes: Vary from 117×91 to 4863×3174 — all resized to 300×300 during preprocessing
 
 
 # 🔬 Exploratory Data Analysis (EDA)
 
 Analyzed the distribution of image dimensions across the full dataset
+
 Identified class imbalance across the 11 weather categories
+
 Used findings to inform preprocessing and augmentation strategy
 
 
@@ -48,15 +53,23 @@ Class Weights        ||    Computed via sklearn.utils.class_weight.compute_class
 Base Model
 
 EfficientNetB0 pretrained on ImageNet (include_top=False)
+
 Base frozen during Phase 1 training
 
 Classification Head
+
 GlobalAveragePooling2D
+
 BatchNormalization
+
 Dense(256, activation='relu')
+
 Dropout(0.4)
+
 Dense(128, activation='relu')
+
 Dropout(0.3)
+
 Dense(11, activation='softmax')
 
 # 🏋️ Training Strategy
@@ -64,14 +77,18 @@ Dense(11, activation='softmax')
 Phase 1 — Head Training (Base Frozen)
 
 Optimizer: Adam(lr=1e-3)
+
 Loss: categorical_crossentropy
+
 Epochs: up to 20 (with Early Stopping)
+
 Callbacks: EarlyStopping(monitor='val_accuracy', patience=5) + ModelCheckpoint
 
 
 # Model Saving
 
 Best model saved automatically via ModelCheckpoint
+
 On subsequent runs, model is loaded from disk — no retraining needed
 
 
@@ -92,15 +109,21 @@ Validation Images     ||    1,369
 Built with Flask — a clean, dark-mode interface where users can:
 
 Upload any weather image (jpg, png, webp, bmp)
+
 Drag and drop support
+
 View the predicted weather class with emoji
+
 See confidence percentage with animated bar
+
 Browse probability scores for all 11 classes
 
 Run Locally
 
 bashpip install flask tensorflow pillow
+
 python flask_app.py
+
 Then open: http://localhost:5000
 
 # 📁 Project Structure
@@ -151,6 +174,7 @@ Install dependencies
 bashpip install flask tensorflow pillow scikit-learn numpy pandas
 
 Download the dataset from Kaggle and train the model using the notebook
+
 Run the Flask app
 
 bashpython flask_app.py
