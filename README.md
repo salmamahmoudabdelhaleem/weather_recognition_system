@@ -101,17 +101,17 @@ Weather-Recognition-System/
 Note: The trained model file (weather_best.keras) is not included due to size. Train the model using the notebook and it will be saved automatically.
 
 
-# 🛠️ Tech Stack
+🛠️ Tech Stack
 
-Category        ||   Tools
-
-Language        ||   Python
-Deep Learning   ||   TensorFlow, Keras
-Model           ||   EfficientNetB0 (Transfer Learning)
-Data Processing ||   NumPy, Pandas
-ML Utilities    ||   Scikit-learn
-Web Framework   ||   Flask
-Frontend        ||   HTML, CSS, JavaScript
+Category         ||   Tools
+------------------------------------------------------------
+Language         ||   Python
+Deep Learning    ||   TensorFlow, Keras
+Model            ||   EfficientNetB0 (Transfer Learning)
+Data Processing  ||   NumPy, Pandas
+ML Utilities     ||   Scikit-learn
+Web Framework    ||   Flask
+Frontend         ||   HTML, CSS, JavaScript
 
 # 🚀 How to Use
 
