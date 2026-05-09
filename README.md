@@ -21,16 +21,27 @@ Used findings to inform preprocessing and augmentation strategy
 
 # ⚙️ Preprocessing & Augmentation
 
-Resize   All images resized to 300×300  || 
-Normalization    EfficientNetB0.preprocess_input (expects 0–255, handles normalization internally) || 
-Rotation        ±10°  || 
-Zoom            20%  || 
-Width/Height Shift   10%  || 
-Shear              10%  || 
-Horizontal Flip    ✅ Yes (no vertical flip — rain/snow falls downward)  || 
-BrightnessRange    [0.8, 1.2]  ||  
-Validation Split   20% (clean generator — no augmentation)  ||  
-Class Weights       Computed via sklearn.utils.class_weight.compute_class_weight to handle imbalance  || 
+Step                 ||   Details
+
+Resize               ||   All images resized to 300×300  
+
+Normalization        ||   EfficientNetB0.preprocess_input (expects 0–255, handles normalization internally) 
+
+Rotation             ||    ±10° 
+
+Zoom                 ||    20%   
+
+Width/Height Shift   ||    10% 
+
+Shear                ||    10%  
+
+Horizontal Flip      ||    ✅ Yes (no vertical flip — rain/snow falls downward) 
+
+BrightnessRange      ||    [0.8, 1.2]   
+
+Validation Split     ||    20% (clean generator — no augmentation)  
+
+Class Weights        ||    Computed via sklearn.utils.class_weight.compute_class_weight to handle imbalance  
 
 
 # 🧠 Model Architecture
@@ -66,12 +77,18 @@ On subsequent runs, model is loaded from disk — no retraining needed
 
 # 📊 Results
 
-Validation Accuracy    +90%  ||  
-Number of Classes      11    || 
-Training Images       5,493   || 
-Validation Images     1,369   || 
+Metric                ||   Value
+
+Validation Accuracy   ||    +90%  
+
+Number of Classes     ||     11   
+
+Training Images       ||     5,493  
+
+Validation Images     ||    1,369   
 
 # 🌐 Web Application
+
 Built with Flask — a clean, dark-mode interface where users can:
 
 Upload any weather image (jpg, png, webp, bmp)
@@ -81,17 +98,25 @@ See confidence percentage with animated bar
 Browse probability scores for all 11 classes
 
 Run Locally
+
 bashpip install flask tensorflow pillow
 python flask_app.py
 Then open: http://localhost:5000
 
 # 📁 Project Structure
+
 Weather-Recognition-System/
+
 ├── flask_app.py                              # Flask backend
+
 ├── Weather image recognition system.ipynb   # Training notebook
+
 ├── templates/
+
 │   └── index.html                           # Frontend UI
+
 ├── static/                                  # Static assets
+
 └── README.md
 
 Note: The trained model file (weather_best.keras) is not included due to size. Train the model using the notebook and it will be saved automatically.
@@ -102,11 +127,17 @@ Note: The trained model file (weather_best.keras) is not included due to size. T
 Category         ||   Tools
 ------------------------------------------------------------
 Language         ||   Python
+
 Deep Learning    ||   TensorFlow, Keras
+
 Model            ||   EfficientNetB0 (Transfer Learning)
+
 Data Processing  ||   NumPy, Pandas
+
 ML Utilities     ||   Scikit-learn
+
 Web Framework    ||   Flask
+
 Frontend         ||   HTML, CSS, JavaScript
 
 # 🚀 How to Use
