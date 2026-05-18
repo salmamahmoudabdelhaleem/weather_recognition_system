@@ -1,6 +1,11 @@
 # 🌤 Weather Image Recognition System
 A deep learning-based web application that automatically classifies weather conditions from images using EfficientNetB0 transfer learning, achieving over 90% validation accuracy across 11 weather classes.
 
+
+
+https://github.com/user-attachments/assets/73d2f4ca-69ee-424f-b7c1-5873a3f9d38e
+
+
 # 📌 Overview
 This project builds an end-to-end intelligent system for weather image recognition — from raw data exploration and model training to a fully functional Flask web application where users can upload any weather image and receive an instant prediction with confidence scores.
 
